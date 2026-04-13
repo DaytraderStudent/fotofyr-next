@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -15,7 +17,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Fotofyr — Fotograf i Norge",
+  title: {
+    default: "Fotofyr — Fotograf i Norge",
+    template: "%s | Fotofyr",
+  },
   description:
     "Profesjonell fotograf spesialisert i bryllup, portrett, natur og eventfotografering. Tidløse bilder som forteller din historie.",
   keywords: [
@@ -45,7 +50,11 @@ export default function RootLayout({
       lang="nb"
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="grain-overlay min-h-full flex flex-col">{children}</body>
+      <body className="grain-overlay min-h-full flex flex-col">
+        <Navigation />
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }

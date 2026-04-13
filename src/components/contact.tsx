@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function Contact() {
-  const sectionRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -34,13 +34,8 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="kontakt"
-      ref={sectionRef}
-      className="py-24 lg:py-32 px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
+    <div ref={sectionRef} className="max-w-7xl mx-auto">
+      <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
           {/* Left side */}
           <div
             className={`lg:col-span-5 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -211,8 +206,7 @@ export default function Contact() {
               </form>
             )}
           </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 }

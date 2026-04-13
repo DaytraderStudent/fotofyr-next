@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -41,18 +42,19 @@ export default function Footer() {
             </p>
             <ul className="space-y-3">
               {[
-                { href: "#portfolio", label: "Portfolio" },
-                { href: "#om-meg", label: "Om meg" },
-                { href: "#tjenester", label: "Tjenester" },
-                { href: "#kontakt", label: "Kontakt" },
+                { href: "/portfolio", label: "Portfolio" },
+                { href: "/om-meg", label: "Om meg" },
+                { href: "/tjenester", label: "Tjenester" },
+                { href: "/blogg", label: "Blogg" },
+                { href: "/kontakt", label: "Kontakt" },
               ].map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-warm transition-colors duration-300 cursor-pointer"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

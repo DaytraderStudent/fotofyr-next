@@ -1,27 +1,21 @@
-import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
-import Portfolio from "@/components/portfolio";
-import About from "@/components/about";
+import HomeFeaturedWork from "@/components/home-featured-work";
+import HomeAboutTeaser from "@/components/home-about-teaser";
 import ImageBand from "@/components/image-band";
-import Services from "@/components/services";
+import HomeServicesTeaser from "@/components/home-services-teaser";
 import Testimonials from "@/components/testimonials";
-import Contact from "@/components/contact";
-import Footer from "@/components/footer";
+import HomeCta from "@/components/home-cta";
 
 export default function Home() {
   return (
-    <>
-      <Navigation />
-      <main>
-        <Hero />
-        <Portfolio />
-        <About />
-        <ImageBand />
-        <Services />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero />
+      <HomeFeaturedWork />
+      <HomeAboutTeaser />
+      <ImageBand />
+      <HomeServicesTeaser />
+      <Testimonials />
+      <HomeCta />
+    </main>
   );
 }
